@@ -9,10 +9,10 @@ if [ -z "$RAILWAY_TOKEN" ]; then
 fi
 
 # Make sure the expect script is executable
-chmod +x ./deploy_railway.exp
+chmod +x ../scripts/deploy_railway.exp
 
 # Run the expect script
-expect ./deploy_railway.exp
+expect ../scripts/deploy_railway.exp
 
 # Run railway up --detach
 railway up --detach
