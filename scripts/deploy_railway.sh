@@ -1,18 +1,18 @@
 #!/bin/bash
 
 cd section-07-ci-and-publishing/house-prices-api
-echo ${RAILWAY_TOKEN}
-# 5ad7efcd-994e-4a79-bfb1-7af273b19170
-# RAILWAY_TOKEN=${RAILWAY_TOKEN} railway run link
-# Run railway link
-# expect -c '
-# spawn RAILWAY_TOKEN=${RAILWAY_TOKEN} railway link
-# expect "? Select a project"
-# send "house_api\r"  
-# expect "? Select an environment"
-# send "production\r"
-# '
 
+# Ensure RAILWAY_TOKEN is set
+if [ -z "$RAILWAY_TOKEN" ]; then
+  echo "RAILWAY_TOKEN is not set"
+  exit 1
+fi
 
-# # Run railway up --detach
-# railway up --detach
+# Make sure the expect script is executable
+chmod +x ./deploy_railway.exp
+
+# Run the expect script
+expect ./deploy_railway.exp
+
+# Run railway up --detach
+railway up --detach
