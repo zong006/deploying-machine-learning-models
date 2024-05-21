@@ -12,12 +12,6 @@ on:
   workflow_dispatch:
 
 jobs:
-  print_working_directory:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Print working directory
-        run: echo $PWD
-
   section_07_test_app:
     runs-on: ubuntu-latest
     steps:
@@ -64,7 +58,7 @@ jobs:
     - name: Deploy to Railway
       run: |
         cd section-07-ci-and-publishing/house-prices-api
-        railway up --detach
+        railway up --service 191f76d0-38d8-491c-8aca-28904512ec89
       env:
         RAILWAY_TOKEN: ${{ secrets.RAILWAY_TOKEN }}
         
