@@ -68,8 +68,7 @@ jobs:
             expect "? Select an environment"
             send "production\r"
             '
-            chmod +x ./scripts/deploy_railway.sh
-            ./scripts/deploy_railway.sh
+            railway up --detach
           environment:
             RAILWAY_TOKEN: $RAILWAY_TOKEN
 
