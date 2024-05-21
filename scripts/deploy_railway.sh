@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# Install expect utility
+sudo apt-get update && sudo apt-get install -y expect
+
 cd section-07-ci-and-publishing/house-prices-api
 # Run railway init
 expect -c '
