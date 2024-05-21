@@ -4,6 +4,10 @@
 sudo apt-get update && sudo apt-get install -y expect
 
 cd section-07-ci-and-publishing/house-prices-api
+
+# Authenticate with Railway using the token
+railway login --token "$RAILWAY_TOKEN"
+
 # Run railway init
 expect -c '
 spawn railway init
