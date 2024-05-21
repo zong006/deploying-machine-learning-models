@@ -26,12 +26,6 @@ jobs:
         with:
           python-version: '3.11.1'
 
-      - name: Create venv
-        run: |
-          python -m venv venv
-          . venv/bin/activate
-          pip install --upgrade pip
-
       - name: Install tox
         run: pip install --user tox
 
