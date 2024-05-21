@@ -2,9 +2,12 @@
 
 cd section-07-ci-and-publishing/house-prices-api
 
+# 5ad7efcd-994e-4a79-bfb1-7af273b19170
+# RAILWAY_TOKEN=${RAILWAY_TOKEN} railway run link
 # Run railway link
 expect -c '
-spawn railway link
+set token \$env(RAILWAY_TOKEN)
+spawn RAILWAY_TOKEN=\$token railway link
 expect "? Select a project"
 send "house_api\r"  
 expect "? Select an environment"
