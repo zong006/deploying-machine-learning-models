@@ -1,7 +1,7 @@
 #!/bin/bash
 
 cd section-07-ci-and-publishing/house-prices-api
-
+echo ${RAILWAY_TOKEN}
 # 5ad7efcd-994e-4a79-bfb1-7af273b19170
 # RAILWAY_TOKEN=${RAILWAY_TOKEN} railway run link
 # Run railway link
