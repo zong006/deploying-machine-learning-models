@@ -57,11 +57,7 @@ jobs:
             sudo apt-get update && sudo apt-get install -y expect
       - run:
           name: Deploy to Railway App (You must set RAILWAY_TOKEN env var)
-          command: |
-            chmod +x ./scripts/deploy_railway.sh
-            echo ${RAILWAY_TOKEN}
-          environment:
-            RAILWAY_TOKEN: $RAILWAY_TOKEN
+          command: echo ${MY_ENV_VAR}
 
   section_07_test_and_upload_regression_model:
     <<: *defaults
