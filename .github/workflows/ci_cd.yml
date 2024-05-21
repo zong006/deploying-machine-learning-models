@@ -58,7 +58,7 @@ jobs:
     - name: Deploy to Railway
       run: |
         cd section-07-ci-and-publishing/house-prices-api
-        railway up --service 191f76d0-38d8-491c-8aca-28904512ec89
+        railway up --service ${{ secrets.RAILWAY_SERVICE_ID }} --detach
       env:
         RAILWAY_TOKEN: ${{ secrets.RAILWAY_TOKEN }}
         
