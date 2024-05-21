@@ -1,0 +1,10 @@
+#!/usr/bin/expect -f
+
+set railway_token $env(RAILWAY_TOKEN)
+
+spawn env RAILWAY_TOKEN=$railway_token railway run link
+expect "? Select a project"
+send "house_api\r"
+expect "? Select an environment"
+send "production\r"
+expect eof
