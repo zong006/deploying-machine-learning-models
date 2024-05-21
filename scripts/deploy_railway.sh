@@ -8,7 +8,7 @@ cd section-07-ci-and-publishing/house-prices-api
 expect -c '
 spawn railway init
 expect "? Project Name "
-send "$RAILWAY_PROJECT_NAME\r"  
+send "house\r"  
 expect {
     "Leave blank to generate a random name" {
         send "\r"
@@ -21,7 +21,7 @@ expect eof
 expect -c '
 spawn railway link
 expect "? Select a project"
-send "$RAILWAY_PROJECT_NAME\r"  
+send "house\r"  
 expect eof
 '
 
