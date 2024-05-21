@@ -54,7 +54,8 @@ jobs:
       - run:
           name: Deploy to Railway App (You must set RAILWAY_TOKEN env var)
           command: |
-            cd section-07-ci-and-publishing/house-prices-api && railway up --detach
+            chmod +x ./scripts/deploy_railway.sh
+            ./scripts/deploy_railway.sh
           environment:
             RAILWAY_TOKEN: $RAILWAY_TOKEN
 
