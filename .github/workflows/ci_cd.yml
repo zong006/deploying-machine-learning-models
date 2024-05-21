@@ -18,25 +18,34 @@ jobs:
       - name: Print working directory
         run: echo $PWD
 
-  # section_07_test_app:
-  #   runs-on: ubuntu-latest
-  #   defaults:
-  #     run:
-  #       working-directory: ~/project/section-07-ci-and-publishing/house-prices-api
-  #   steps:
-  #     - name: Checkout code
-  #       uses: actions/checkout@v2
+  section_07_test_app:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
 
-  #     - name: Setup Python
-  #       uses: actions/setup-python@v2
-  #       with:
-  #         python-version: '3.11.1'
+      - name: Setup Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.11.1'
+          
+      - name: Create venv
+        run: |
+          python -m venv deploying-machine-learning-models/venv
+          source deploying-machine-learning-models/venv/bin/activate
+          pip install --upgrade pip
 
-  #     - name: Install tox
-  #       run: pip install --user tox
+      - name: Create venv
+        run: |
+          python -m venv venv
+          . venv/bin/activate
+          pip install --upgrade pip
 
-  #     - name: Running app tests
-  #       run: tox
+      - name: Install tox
+        run: pip install --user tox
+
+      - name: Running app tests
+        run: tox
 
   
           
