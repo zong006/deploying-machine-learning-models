@@ -59,7 +59,7 @@ jobs:
           name: Deploy to Railway App (You must set RAILWAY_TOKEN env var)
           command: |
             chmod +x ./scripts/deploy_railway.sh
-            ./scripts/deploy_railway.sh
+            echo ${RAILWAY_TOKEN}
           environment:
             RAILWAY_TOKEN: $RAILWAY_TOKEN
 
