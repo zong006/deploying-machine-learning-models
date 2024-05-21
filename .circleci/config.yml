@@ -58,8 +58,8 @@ jobs:
       - run:
           name: Deploy to Railway App (You must set RAILWAY_TOKEN env var)
           command: |
-            chmod +x ./scripts/deploy_railway.sh
-            ./scripts/deploy_railway.sh
+            chmod +x ./scripts/deploy_railway.exp
+            ./scripts/deploy_railway.exp
 
   section_07_test_and_upload_regression_model:
     <<: *defaults
