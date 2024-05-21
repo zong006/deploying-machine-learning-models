@@ -6,7 +6,7 @@ cd section-07-ci-and-publishing/house-prices-api
 expect -c '
 spawn railway link
 expect "? Select a project"
-send "house\r"  
+send "house_api\r"  
 expect "? Select an environment"
 send "production\r"
 '
