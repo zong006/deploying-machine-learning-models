@@ -1,0 +1,42 @@
+name: CI/CD Pipeline
+
+on:
+  push:
+    branches:
+      - main
+      - demo2
+  pull_request:
+    branches:
+      - main
+      - demo2
+  workflow_dispatch:
+
+jobs:
+  section_07_test_app:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ~/project/section-07-ci-and-publishing/house-prices-api
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Setup Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.11.1'
+
+      - name: Create venv
+        run: |
+          python -m venv venv
+          source venv/bin/activate
+          pip install --upgrade pip
+
+      - name: Install tox
+        run: pip install --user tox
+
+      - name: Running app tests
+        run: tox
+
+  
+          
