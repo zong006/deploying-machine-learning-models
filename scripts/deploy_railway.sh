@@ -1,9 +1,5 @@
 #!/bin/bash
 
-
-# Make sure the expect script is executable
-chmod +x ./deploy_railway.exp
-
 cd section-07-ci-and-publishing/house-prices-api
 
 # Ensure RAILWAY_TOKEN is set
