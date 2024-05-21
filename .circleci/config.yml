@@ -58,6 +58,16 @@ jobs:
       - run:
           name: Deploy to Railway App (You must set RAILWAY_TOKEN env var)
           command: |
+            cd section-07-ci-and-publishing/house-prices-api
+
+            RAILWAY_TOKEN="$RAILWAY_TOKEN"
+            expect -c '
+            spawn RAILWAY_TOKEN=${RAILWAY_TOKEN} railway link
+            expect "? Select a project"
+            send "house_api\r"  
+            expect "? Select an environment"
+            send "production\r"
+            '
             chmod +x ./scripts/deploy_railway.sh
             ./scripts/deploy_railway.sh
           environment:
