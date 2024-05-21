@@ -12,25 +12,31 @@ on:
   workflow_dispatch:
 
 jobs:
-  section_07_test_app:
+  print_working_directory:
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: ~/project/section-07-ci-and-publishing/house-prices-api
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
+      - name: Print working directory
+        run: echo $PWD
 
-      - name: Setup Python
-        uses: actions/setup-python@v2
-        with:
-          python-version: '3.11.1'
+  # section_07_test_app:
+  #   runs-on: ubuntu-latest
+  #   defaults:
+  #     run:
+  #       working-directory: ~/project/section-07-ci-and-publishing/house-prices-api
+  #   steps:
+  #     - name: Checkout code
+  #       uses: actions/checkout@v2
 
-      - name: Install tox
-        run: pip install --user tox
+  #     - name: Setup Python
+  #       uses: actions/setup-python@v2
+  #       with:
+  #         python-version: '3.11.1'
 
-      - name: Running app tests
-        run: tox
+  #     - name: Install tox
+  #       run: pip install --user tox
+
+  #     - name: Running app tests
+  #       run: tox
 
   
           
