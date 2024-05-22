@@ -14,7 +14,6 @@ on:
 jobs:
   section_07_test_app:
     runs-on: ubuntu-latest
-    working-directory: section-07-ci-and-publishing/house-prices-api
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
@@ -40,7 +39,9 @@ jobs:
         run: pip install --user tox
 
       - name: Running app tests
-        run: tox
+        run: |
+          cd section-07-ci-and-publishing/house-prices-api
+          tox
 
   deploy_to_railway:
     runs-on: ubuntu-latest
